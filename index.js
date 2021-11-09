@@ -15,7 +15,6 @@ function map(obj, callBack) {
       i = 0
     } else {
       accumulator = obj[keys[0]]
-      console.log(accumulator)
     }
   
     for (i; i < keys.length; i++) {
