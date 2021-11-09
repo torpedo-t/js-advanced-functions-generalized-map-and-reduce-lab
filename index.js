@@ -1,13 +1,13 @@
 // Add your functions here
-function map(obj, cb) {
+function map(obj, callBack) {
     const arr = []
     for (const key in obj) {
-      arr.push(cb(obj[key]))
+      arr.push(callBack(obj[key]))
     }
     return arr
   }
   
-  function reduce(obj, cb, accumulator) {
+  function reduce(obj, callBack, accumulator) {
     const keys = Object.keys(obj)
     let i = 1
   
@@ -15,10 +15,11 @@ function map(obj, cb) {
       i = 0
     } else {
       accumulator = obj[keys[0]]
+      console.log(accumulator)
     }
   
     for (i; i < keys.length; i++) {
-      accumulator = cb(accumulator, obj[keys[i]])
+      accumulator = callBack(accumulator, obj[keys[i]])
     }
     return accumulator
   }
